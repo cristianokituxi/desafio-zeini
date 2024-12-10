@@ -1,93 +1,103 @@
-# Front-end
+## Sistema de Gerenciamento de consultas medicas 🏎️
+Este é o frontend do Sistema de Gerenciamento de consultas medicas, desenvolvido com React e configurado com Vite para desempenho otimizado. O sistema é desenvolvido em TypeScript e utiliza bibliotecas modernas para gerenciamento de estado, estilização e integração com APIs. Este módulo inicial inclui autenticação, e CRUD de entidades como Usuários e Karts.
 
+## 🛠️ Tecnologias Utilizadas
+Vite (Build Tool)  
+React (Framework de UI)  
+TypeScript (Superset do JavaScript)  
+MUI (Material-UI) (Biblioteca de componentes)  
+@mui/material, @mui/icons-material, @mui/x-data-grid, @mui/x-date-pickers  
+Gerenciamento de Estado: Recoil  
+Validação de Formulários: React Hook Form + Yup  
+Estilização: Sass, Emotion  
+Gráficos: React Google Charts, MUI Charts  
+Geração de PDFs: PdfMake  
+Autenticação: Firebase  
+Notificações: React Toastify  
+Manipulação de Dados: Axios, Date-fns  
+Outros: React Router, React Input Mask, dotenv  
 
-
-## Getting started
-
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
+**Abaixo a estrutura  de diretório do projeto.**
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/desafios5844245/aeroscan/front-end.git
-git branch -M main
-git push -uf origin main
+Front-end/  
+│   
+├──  Modulo-gestor/
+│   ├── public/               
+│   ├── src/
+│   │   ├── assets/          
+│   │   ├── components/      
+│   │   ├── context/           
+│   │   ├── fonts/            
+│   │   ├── pages/           
+│   │   ├── routes/           
+│   │   ├── services/           
+│   │   ├── url/     
+|   |   ├── utils/           
+│   │   |      
+│   ├── App.tsx           
+│   ├── main.tsx          
+│   ├── .env                
+│   └── vite.config.ts       
+│   └── .env
+|   └── .gitgnore
+|   └── README.md
+|
+├──  Modulo-gestor/
+│   ├── public/               
+│   ├── src/
+│   │   ├── assets/          
+│   │   ├── components/      
+│   │   ├── context/                      
+│   │   ├── pages/           
+│   │   ├── routes/               
+│   │   ├── url/             
+│   │   |      
+│   ├── App.tsx           
+│   ├── main.tsx          
+│   ├── .env                
+│   └── vite.config.ts       
+│   └── .env
+|   └── .gitgnore
+|   └── README.md
+|
+└── .gitgnore
+└── README.md
 ```
 
-## Integrate with your tools
+## 🚀 Como Configurar e Iniciar o Projeto
+**1. Clonar o Repositório**
+``git clone https://gitlab.com/desafios5844245/aeroscan/front-end.git``  
+ 
+   2. cd modulo-gestor  
 
-- [ ] [Set up project integrations](https://gitlab.com/desafios5844245/aeroscan/front-end/-/settings/integrations)
+2. dentro da pasta Modulo-Gestor e supondo que já tenha instalado todos os pré requisitos execute o seguinte comando para subir os serviços:
+ ``npm install ou yarn`` em seguida execute ``yarn run dev``
 
-## Collaborate with your team
+## Funcionalidades Implementadas
+**Autenticação**
+Login e registro
+Persistência de sessão.
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+**CRUD**
+Gerenciamento de Usuários
+Interface amigável utilizando MUI DataGrid.
 
-## Test and Deploy
+**3. start do modulo paciente**
+ 2. cd modulo-paciente 
 
-Use the built-in continuous integration in GitLab.
+ 2. dentro da pasta Modulo-paciente e supondo que já tenha instalado todos os pré requisitos execute o seguinte comando para subir os serviços:
+ ``npm install ou yarn`` em seguida execute ``yarn run dev``
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+## Funcionalidades Implementadas
+Autenticação de Usuário: Verifica credenciais e exibe mensagens de erro em caso de falha.
+Cadastro de Usuários: Campos obrigatórios para nome, sobrenome, e-mail, senha.
+Recuperação de Credenciais: Campo para inserir e-mail e enviar solicitação de redefinição de senha.
+Validação de Campos: Confirmação de preenchimento do e-mail.
+Feedback Visual: Mensagem informando envio de e-mail ou erro, caso o e-mail não seja
+Persistência de sessão e redirecionamento pós-login.
+listagem completa de médicos
+Filtro por Especialidade: Permite buscar médicos por sua área de atuação, como "Cardiologista" ou "Pediatra".
+Filtro por Hospital: Lista apenas médicos vinculados a um hospital específico.
 
-***
 
-# Editing this README
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
