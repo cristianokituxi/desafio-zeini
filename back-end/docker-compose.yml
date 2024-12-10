@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build:
+      context: api
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Expondo apenas a porta do API Gateway
+    depends_on:
+      - auth-service
+      - crud-service
+    environment:
+      - AUTH_SERVICE_URL=http://auth-service:4000
+      - CRUD_SERVICE_URL=http://crud-service:4001
+
+  auth-service:
+    build:
+      context: authService
+      dockerfile: Dockerfile
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - JWT_SECRET=${JWT_SECRET}
+
+  crud-service:
+    build:
+      context: CrudService
+      dockerfile: Dockerfile
+    environment:
+      - MONGO_URI=${MONGO_URI}
