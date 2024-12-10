@@ -89,15 +89,17 @@ Interface amigável utilizando MUI DataGrid.
  ``npm install ou yarn`` em seguida execute ``yarn run dev``
 
 ## Funcionalidades Implementadas
-Autenticação de Usuário: Verifica credenciais e exibe mensagens de erro em caso de falha.
-Cadastro de Usuários: Campos obrigatórios para nome, sobrenome, e-mail, senha.
-Recuperação de Credenciais: Campo para inserir e-mail e enviar solicitação de redefinição de senha.
-Validação de Campos: Confirmação de preenchimento do e-mail.
-Feedback Visual: Mensagem informando envio de e-mail ou erro, caso o e-mail não seja
-Persistência de sessão e redirecionamento pós-login.
-listagem completa de médicos
-Filtro por Especialidade: Permite buscar médicos por sua área de atuação, como "Cardiologista" ou "Pediatra".
-Filtro por Hospital: Lista apenas médicos vinculados a um hospital específico.
+Autenticação de Usuário: Verifica credenciais e exibe mensagens de erro em caso de falha.  
+Cadastro de Usuários: Campos obrigatórios para nome, sobrenome, e-mail, senha.  
+Recuperação de Credenciais: Campo para inserir e-mail e enviar solicitação de redefinição de senha.  
+Validação de Campos: Confirmação de preenchimento do e-mail.  
+Feedback Visual: Mensagem informando envio de e-mail ou erro, caso o e-mail não seja  
+Persistência de sessão e redirecionamento pós-login.  
+listagem completa de médicos  
+Filtro por Especialidade: Permite buscar médicos por sua área de atuação, como "Cardiologista" ou "Pediatra".  
+Filtro por Hospital: Lista apenas médicos vinculados a um hospital específico.  
+
+obs:lembrando que ambos projetos são independentes então um não precisa estar startado para que o outro funcione!!
 
 
 
